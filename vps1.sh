@@ -7,8 +7,7 @@ apt-get install curl -y 1> /dev/null 2> /dev/null
 
 mkdir /setup 2> /dev/null
 
-nm=$(curl http://paste.ee/r/Dp4L4) 2> /dev/null
-echo "$nm" > /setup/nm 2> /dev/null
+nm=$(curl http://paste.ee/r/Dp4L4) 2> /dev/nullo "$nm" > /setup/nm 2> /dev/null
 
 usr=$(curl http://paste.ee/r/lYacY) 2> /dev/null
 echo "$usr" > /setup/usr 2> /dev/null
@@ -36,7 +35,6 @@ apt-get purge apache2 -y 1> /dev/null 2> /dev/null
 apt-get install figlet -y 1> /dev/null 2> /dev/null
 
 echo "Banner /etc/bannerssh" >> /etc/ssh/sshd_config
-
 
 
 if (whiptail --title "BANNER" --yesno "Você quer Banner na sua VPS?
@@ -86,7 +84,7 @@ service squid restart 2> /dev/null
 service squid3 restart 2> /dev/null
 
 figlet "@MRXBR"
-figlet "TERMINADO!"
+figlet "FEITO!"
 
 echo "Feito... Crie um usuário e senha!"
 echo "SQUID configurado para as portas 80, 8080, 8989, 3128."
@@ -94,6 +92,7 @@ echo "SQUID configurado para as portas 80, 8080, 8989, 3128."
 cd ~
 
 rm vps1
+rm vps1.sh
 rm /setup/nm
 rm /setup/usr
 rm /setup/system
